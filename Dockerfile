@@ -4,7 +4,7 @@ FROM openjdk:11-jdk-slim
 RUN apt-get update && apt-get install -y curl unzip
 
 # Download & extract GraphDB
-RUN curl -L -o graphdb.zip https://download.ontotext.com/graphdb/graphdb-11.0.1-dist.zip && \
+RUN curl -L -o graphdb.zip https://download.ontotext.com/owlim/b1d91bea-25d4-11f0-829f-42843b1b6b38/graphdb-11.0.1-dist.zip  && \
     unzip graphdb.zip && \
     mv graphdb-11.0.1 graphdb && \
     rm graphdb.zip
