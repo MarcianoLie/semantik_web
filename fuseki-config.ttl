@@ -7,7 +7,6 @@
    fuseki:services (
      :semantik
    ) .
-   fuseki:pages fuseki:pagesStatic .
 
 :semantik a fuseki:Service ;
     fuseki:name "semantik-web" ;
