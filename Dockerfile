@@ -11,7 +11,7 @@ RUN curl -L -o graphdb.zip https://download.ontotext.com/graphdb/graphdb-11.0.1-
 
 # Copy config & data
 COPY config.ttl /config.ttl
-COPY data.ttl /data.ttl
+COPY rectoverso.ttl /rectoverso.ttl
 
 # Run GraphDB and import data
 CMD bash -c "\
