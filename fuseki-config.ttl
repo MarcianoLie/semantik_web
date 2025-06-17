@@ -7,6 +7,33 @@
    fuseki:services (
      :semantik
    ) .
+   fuseki:pages fuseki:pagesStatic .
+
+:semantik a fuseki:Service ;
+    fuseki:name "semantik-web" ;
+    fuseki:serviceQuery "sparql" ;
+    fuseki:serviceUpdate "update" ;
+    fuseki:serviceUpload "upload" ;
+    fuseki:serviceReadGraphStore "get" ;
+    fuseki:serviceReadWriteGraphStore "data" ;
+    fuseki:dataset :dataset .
+
+:dataset a ja:MemoryDataset ;
+    ja:defaultGraph [
+        a ja:Graph ;
+        ja:content [ 
+            a ja:ExternalContent ;
+            ja:uri "file:/fuseki/data.ttl"
+        ]
+    ] .@prefix :      <#> .
+@prefix fuseki: <http://jena.apache.org/fuseki#> .
+@prefix ja:     <http://jena.hpl.hp.com/2005/11/Assembler#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+[] rdf:type fuseki:Server ;
+   fuseki:services (
+     :semantik
+   ) .
 
 :semantik a fuseki:Service ;
     fuseki:name "semantik-web" ;
