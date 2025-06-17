@@ -12,5 +12,4 @@ COPY fuseki-config.ttl /fuseki/config.ttl
 COPY data.ttl /fuseki/data.ttl
 
 # Jalankan Fuseki di port Railway (3000)
-CMD bash -c "cd fuseki && \
-    ./fuseki-server --config=config.ttl --port=3000"
+CMD ["./fuseki/fuseki-server", "--config=config.ttl", "--port=3000", "--localhost=0.0.0.0"]
